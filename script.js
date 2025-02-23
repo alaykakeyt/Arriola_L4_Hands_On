@@ -1,10 +1,14 @@
-let num;
-do {
-    num = prompt("Enter a positive number:");
-} while (isNaN(num) || num <= 0 || num.includes(".") || num.includes("-"));
+function checker() {
+    let num = parseInt(document.getElementById("number").value);
 
-num = parseInt(num);
-alert(num % 2 === 0 ? "Even" : "Odd");
+    if (isNaN(num)) {
+        document.getElementById("result").innerText = "Please enter a valid number.";
+    } else if (num % 2 === 0) {
+        document.getElementById("result").innerText = "Even";
+    } else {
+        document.getElementById("result").innerText = "Odd";
+    }
+}
 
 for (let i = 1; i <= 10; i++) {
     console.log(i);
